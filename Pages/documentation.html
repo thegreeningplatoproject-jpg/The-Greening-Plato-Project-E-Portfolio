@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="../Design.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="../index.html">
+            <img src="../1.png" alt="Greening Plato logo">
+        </a>
+        <ul>
+            <li><a href="../index.html"><img src="../Icons/Home.svg" alt="Home"> Home</a></li>
+            <li><a href="About.html"><img src="../Icons/AboutUs.svg" alt="About Us"> About Us</a></li>
+            <li><a href="Project.html"><img src="../Icons/Proyekto.svg" alt="Proyekto"> Proyekto</a></li>
+            <li><a href="Accomplishment.html"><img src="../Icons/Accomplishment.svg" alt="Accomplishments"> Accomplishments</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="project-section">
+            <div class="project-content">
+                <h2>Documentation</h2>
+                <p class="project-subheading"></p>
+
+                <!-- Timeline Section -->
+                <h2>Timeline and Scope of Activities</h2>
+                <div class="timeline-wrapper">
+                    <div class="timeline">
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Project Observation Phase:</h3>
+                                <p>Conducted environmental scanning of the CHMSU cafeteria to document existing conditions and practices, with a focus on the plate return system.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Issue Identification</h3>
+                                <p>Analyzed current plate return practices and identified operational and sustainability-related issues.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Proposal Development:</h3>
+                                <p>Developed structured recommendations under the Greening Plato Program based on gathered observations and analysis.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Formal Presentation:</h3>
+                                <p>Presented the finalized proposal to the CHMSU University Student Government (CUSG) for evaluation and consideration.</p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 5 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Project Limitation:</h3>
+                                <p>Project concluded at the proposal stage; implementation and resolution approval were dependent on CUSG and relevant university offices and were beyond the group's authority.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doc-grid">
+                    <div class="doc-column">
+                        <figure class="doc-item">
+                            <img src="../Images/CUSG Presentation 2.png" alt="CUSG Presentation 2" data-index="0" onclick="openGallery(0)">
+                            <figcaption>Presentation and interpretation of survey results, highlighting key findings and insights that informed the design and justification of the proposed return system.</figcaption>
+                        </figure>
+                        <figure class="doc-item">
+                            <img src="../Images/CUSG Presentation.png" alt="CUSG Presentation" data-index="1" onclick="openGallery(1)">
+                            <figcaption>Formal presentation of the project proposal to the Legislative Body of the CUSG, conducted for feedback, consultation, and possible policy consideration.</figcaption>
+                        </figure>
+                        <figure class="doc-item">
+                            <img src="../Images/First Presentation.jpg" alt="First Presentation" data-index="2" onclick="openGallery(2)">
+                            <figcaption>First presentation of project proposal to the course instructor.</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="doc-column">
+                        <figure class="doc-item">
+                            <img src="../Images/First Team Wide Meeting.jpg" alt="First Team Wide Meeting" data-index="3" onclick="openGallery(3)">
+                            <figcaption>First meeting done by the collaborative group after the initial presentation. Discussion of plans of signage and implementation.</figcaption>
+                        </figure>
+                        <figure class="doc-item">
+                            <img src="../Images/Convo 2.png" alt="Convo 2" data-index="4" onclick="openGallery(4)">
+                            <figcaption>Conversation among group leader and memebers on the data collected. In which it was interpreted and integrated to the presentation for the ligeslative body.</figcaption>
+                        </figure>
+                        <figure class="doc-item">
+                            <img src="../Images/Convo 3.png" alt="Convo 3" data-index="5" onclick="openGallery(5)">
+                            <figcaption>Discussion on the development of professional signages, guided by established examples and best practices, to ensure clarity, consistency, and effective communication within the cafeteria return system.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="gallery-modal" onclick="closeGallery()">
+        <button class="gallery-close" onclick="event.stopPropagation(); closeGallery();">&times;</button>
+        <button class="gallery-nav prev" onclick="event.stopPropagation(); prevImage();">&#10094;</button>
+        <div class="gallery-content" onclick="event.stopPropagation();">
+            <img id="galleryImage" src="" alt="Gallery image">
+            <div id="galleryCaption" class="gallery-caption"></div>
+        </div>
+        <button class="gallery-nav next" onclick="event.stopPropagation(); nextImage();">&#10095;</button>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Scroll to top">↑</button>
+
+    <script src="../script.js"></script>
+</body>
+</html>

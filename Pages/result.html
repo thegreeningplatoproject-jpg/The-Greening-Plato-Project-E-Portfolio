@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="../Design.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="../index.html">
+            <img src="../1.png" alt="Greening Plato logo">
+        </a>
+        <ul>
+            <li><a href="../index.html"><img src="../Icons/Home.svg" alt="Home"> Home</a></li>
+            <li><a href="About.html"><img src="../Icons/AboutUs.svg" alt="About Us"> About Us</a></li>
+            <li><a href="Project.html"><img src="../Icons/Proyekto.svg" alt="Proyekto"> Proyekto</a></li>
+            <li><a href="Accomplishment.html"><img src="../Icons/Accomplishment.svg" alt="Accomplishments"> Accomplishments</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Results Section -->
+        <section class="accomplishment-section">
+            <h2>Results</h2>
+            <div class="image-gallery">
+                <div class="gallery-item gallery-item-large" onclick="openModal(this)">
+                    <img src="../Images/pol.jpeg" alt="Result 1" class="gallery-image">
+                    <h4 class="policy">Policies</h4>
+                    <p class="gallery-caption">
+                        SECTION 1. Title. — This Act shall be known as the “CHMSU Cafeteria Return System Act. <br>
+                        SECTION 2. Policy. — It is the policy of CHMSU to promote hygiene, order, and shared responsibility in the cafeteria. <br>
+                        SECTION 3. Return System. — A centralized, clearly labeled return container shall be installed, with compartments for: 
+                            (a) Plates <br>
+                            (b) Utensils <br>
+                            (c) Food waste <br>
+                        SECTION 4. Signages. — Clear instructions shall guide proper placement of items and promote cleanliness and cooperation. <br>
+                        SECTION 5. Responsibilities. — Students shall return items properly and dispose of food waste correctly. Cafeteria staff shall monitor the area and maintain cleanliness. <br>
+                        SECTION 6. Student Government Role. — CUSG, with relevant offices, shall promote the system, evaluate its effectiveness, and suggest improvements. <br>
+                        SECTION 7. Non-Punitive Approach. — Implementation shall focus on awareness, habit formation, and shared accountability, not penalties. <br>
+                        SECTION 8. Review. — The system shall be periodically reviewed based on staff observation, student feedback, and cleanliness improvement. <br>
+                    </p>
+
+                </div>
+
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="../Images/CUSG Presentation.png" alt="Result 2" class="gallery-image">
+                    <p class="gallery-caption">Presentation of initial plan to the Legislative</p>
+                </div>
+
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="../Surprised Pikachu.png" alt="Result 3" class="gallery-image">
+                    <p class="gallery-caption">Opps there's nothing here yet</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for expanded view -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-image-container">
+                <img id="modalImage" src="" alt="Expanded image" class="modal-image">
+            </div>
+            <div class="modal-description-panel">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Result</h3>
+                    <span class="close" onclick="closeModal()">&times;</span>
+                </div>
+                <div class="modal-description">
+                    <p id="modalCaption"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

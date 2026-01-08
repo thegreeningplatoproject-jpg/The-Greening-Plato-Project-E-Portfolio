@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis & Insights</title>
+    <link rel="stylesheet" href="../Design.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="../index.html">
+            <img src="../1.png" alt="Greening Plato logo">
+        </a>
+        <ul>
+            <li><a href="../index.html"><img src="../Icons/Home.svg" alt="Home"> Home</a></li>
+            <li><a href="About.html"><img src="../Icons/AboutUs.svg" alt="About Us"> About Us</a></li>
+            <li><a href="Project.html"><img src="../Icons/Proyekto.svg" alt="Proyekto"> Proyekto</a></li>
+            <li><a href="Accomplishment.html"><img src="../Icons/Accomplishment.svg" alt="Accomplishments"> Accomplishments</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="analysis-section">
+            <div class="analysis-header">
+                <h1>Analysis & Insights</h1>
+                <p>Comprehensive survey findings from our environmental scanning and student feedback</p>
+            </div>
+
+            <!-- Main Analysis Layout -->
+            <div class="analysis-layout">
+                <!-- Left Column: Two Large Charts -->
+                <div class="analysis-left">
+                    <!-- Chart 1: Cleanliness Ratings -->
+                    <div class="analysis-chart-large" onclick="openChartModal('chart1', 'Cafeteria Cleanliness Ratings')">
+                        <h3>Cafeteria Cleanliness Ratings</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="chart1"></canvas>
+                        </div>
+                        <p class="chart-summary">Most students rated the cafeteria as "Fair," indicating that cleanliness is acceptable but inconsistent, especially during busy hours.</p>
+                        <p class="chart-click-hint">Click to expand</p>
+                    </div>
+
+                    <!-- Chart 2: Plate-Returning Behavior -->
+                    <div class="analysis-chart-large" onclick="openChartModal('chart2', 'Plate-Returning Behavior')">
+                        <h3>Plate-Returning Behavior</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="chart2"></canvas>
+                        </div>
+                        <p class="chart-summary">Almost all respondents reported returning their plates, showing strong awareness and willingness to cooperate.</p>
+                        <p class="chart-click-hint">Click to expand</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Chart + Suggestions -->
+                <div class="analysis-right">
+                    <!-- Chart 3: Organization of Plate Return System -->
+                    <div class="analysis-chart-large" onclick="openChartModal('chart3', 'Organization of Plate Return System')">
+                        <h3>Organization of Plate Return System</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="chart3"></canvas>
+                        </div>
+                        <p class="chart-summary">Most students believe that the plate return system is disorganized, despite high participation in returning plates.</p>
+                        <p class="chart-click-hint">Click to expand</p>
+                    </div>
+
+                    <!-- Suggestions List -->
+                    <div class="suggestions-box">
+                        <h3>Student Suggestions</h3>
+                        <div class="suggestions-scroll">
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>Separating the plates from the utensils and glasses would make the return system more clean and organize. Also, students, staffs, and teachers should be able to separate the food remains into a separate bin/container. So that, when placing into the container, it wouldn't get messy.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>I highly suggest that a spoon and fork have different colors, as the fork will have silverware while the spoon is gold/ different color.
+                                it will be placed in their designated color baskets.
+                                as for the plates, they will be thrown in a nearby trash can/ trash bag</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>By putting Signage outside the cafeteria like "claygo", since other students doesn't clean their table</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>Build stronger foundation in molding students to follow such—if by any chance that it would be implemented. For an implementation could only be truly successful if was done through shared actions by the community and not merely a guideline.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>I think students in our campus have proper knowledge on what is CLAYGO preactices. Therefore, I want to suggest that it should be strongly implemented maybe in a form of talk, signage etc</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>Improve the place where we return our plate because it's kind a unhygienic that the students just stack their plates using their bare hands knowing that there's no near wash area around the cafeteria</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>Encourage reminders. May it be signages at every table, posts in Facebook through pubmats, etc./p>
+                            </div>
+                            <div class="suggestion-item">
+                                <span class="suggestion-icon">✓</span>
+                                <p>Assign a specific area for returning of plates; separate the spoon, fork, plate, and cups to be more organized. Also add a bag/box to dispose of their leftovers so that the rack would stay clean. Handwash or alcohol dispenser for hygiene/sanitization next to it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chart Modal -->
+    <div id="chartModal" class="chart-modal">
+        <div class="chart-modal-content" onclick="event.stopPropagation();">
+            <button class="chart-modal-close" onclick="closeChartModal();">&times;</button>
+            <h2 id="chartModalTitle">Chart Title</h2>
+            <div id="chartModalBody" class="chart-modal-body">
+                <!-- Chart will be rendered here -->
+            </div>
+            <div class="chart-modal-text">
+                <p id="chartModalDescription">Placeholder text describing the chart and findings from the survey data.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        // Chart 1: Cleanliness Ratings (Pie Chart)
+        const ctx1 = document.getElementById('chart1').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Excellent (6.9%)', 'Good (31.0%)', 'Fair (39.1%)', 'Poor (17.2%)', 'Very Poor (5.7%)'],
+                datasets: [{
+                    data: [6.9, 31.0, 39.1, 17.2, 5.7],
+                    backgroundColor: [
+                        '#4CAF50',
+                        '#9CAF88',
+                        '#FFC107',
+                        '#FF9800',
+                        '#FF5252'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: "'Lato', sans-serif", size: 12 },
+                            color: '#555',
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        });
+
+        // Chart 2: Plate-Returning Behavior (Doughnut)
+        const ctx2 = document.getElementById('chart2').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Yes (95.4%)', 'No (4.6%)'],
+                datasets: [{
+                    data: [95.4, 4.6],
+                    backgroundColor: [
+                        '#06402B',
+                        '#FFB3BA'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: "'Lato', sans-serif", size: 12 },
+                            color: '#555',
+                            padding: 15,
+                            usePointStyle: true
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        });
+
+        // Chart 3: Organization of Plate Return System (Bar Chart)
+        const ctx3 = document.getElementById('chart3').getContext('2d');
+        new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Organized', 'Disorganized'],
+                datasets: [{
+                    label: 'Number of Students',
+                    data: [32, 55],
+                    backgroundColor: [
+                        '#9CAF88',
+                        '#FF6B6B'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 70,
+                        ticks: {
+                            font: { family: "'Lato', sans-serif", size: 11 },
+                            color: '#666'
+                        },
+                        grid: { color: '#E5E7EB' }
+                    },
+                    x: {
+                        ticks: {
+                            font: { family: "'Lato', sans-serif", size: 12 },
+                            color: '#555'
+                        },
+                        grid: { display: false }
+                    }
+                },
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        });
+    </script>
+    <script>
+        // Chart Modal Functionality
+        let fullCharts = {};
+
+        function openChartModal(chartId, chartTitle) {
+            const modal = document.getElementById('chartModal');
+            const modalTitle = document.getElementById('chartModalTitle');
+            const modalBody = document.getElementById('chartModalBody');
+            const modalDescription = document.getElementById('chartModalDescription');
+
+            modalTitle.textContent = chartTitle;
+            
+            // Set placeholder description based on chart
+            let description = '';
+            if (chartId === 'chart1') {
+                description = 'Cleanliness Ratings: Most students rated the cafeteria as "Fair" (39.1%), indicating that cleanliness is acceptable but inconsistent. With 31% rating it as "Good", there is room for improvement in maintaining consistent cleanliness standards throughout the day, especially during peak hours.';
+            } else if (chartId === 'chart2') {
+                description = 'Plate-Returning Behavior: An impressive 95.4% of students report returning their plates after eating, showing strong student awareness and willingness to participate in maintaining cafeteria cleanliness. This high compliance rate demonstrates that students are engaged and responsible users of the space.';
+            } else if (chartId === 'chart3') {
+                description = 'Organization of Plate Return System: Despite the high return rate, 63.2% of students believe the system is disorganized. This suggests that while students are willing to cooperate, the current infrastructure and organization need improvement to efficiently handle the volume of plate returns.';
+            }
+            
+            modalDescription.textContent = description;
+
+            // Clear and recreate canvas
+            modalBody.innerHTML = '<canvas id="fullChart"></canvas>';
+            const fullCanvas = document.getElementById('fullChart');
+            
+            // Get original chart data and recreate with larger size
+            recreateChartInModal(chartId, fullCanvas);
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeChartModal() {
+            const modal = document.getElementById('chartModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function recreateChartInModal(originalChartId, canvasElement) {
+            // Get data from original chart and recreate
+            let chartConfig = {};
+            
+            if (originalChartId === 'chart1') {
+                chartConfig = {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Excellent (6.9%)', 'Good (31.0%)', 'Fair (39.1%)', 'Poor (17.2%)', 'Very Poor (5.7%)'],
+                        datasets: [{
+                            data: [6.9, 31.0, 39.1, 17.2, 5.7],
+                            backgroundColor: ['#4CAF50', '#9CAF88', '#FFC107', '#FF9800', '#FF5252'],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { font: { family: "'Lato', sans-serif", size: 14 }, color: '#555', padding: 20, usePointStyle: true } }
+                        }
+                    }
+                };
+            } else if (originalChartId === 'chart2') {
+                chartConfig = {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Yes (95.4%)', 'No (4.6%)'],
+                        datasets: [{
+                            data: [95.4, 4.6],
+                            backgroundColor: ['#06402B', '#FFB3BA'],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'bottom', labels: { font: { family: "'Lato', sans-serif", size: 14 }, color: '#555', padding: 20, usePointStyle: true } }
+                        }
+                    }
+                };
+            } else if (originalChartId === 'chart3') {
+                chartConfig = {
+                    type: 'bar',
+                    data: {
+                        labels: ['Organized', 'Disorganized'],
+                        datasets: [{
+                            label: 'Number of Students',
+                            data: [32, 55],
+                            backgroundColor: ['#9CAF88', '#FF6B6B'],
+                            borderRadius: 8,
+                            borderSkipped: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { beginAtZero: true, max: 70, ticks: { font: { family: "'Lato', sans-serif", size: 12 }, color: '#666' }, grid: { color: '#E5E7EB' } },
+                            x: { ticks: { font: { family: "'Lato', sans-serif", size: 13 }, color: '#555' }, grid: { display: false } }
+                        }
+                    }
+                };
+            }
+            
+            const ctx = canvasElement.getContext('2d');
+            new Chart(ctx, chartConfig);
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeChartModal();
+            }
+        });
+
+        // Close modal when clicking outside the modal content
+        document.getElementById('chartModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeChartModal();
+            }
+        });
+    </script>
+</body>
+</html>

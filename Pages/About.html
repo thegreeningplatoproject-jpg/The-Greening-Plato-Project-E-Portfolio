@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="../Design.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="../index.html">
+            <img src="../1.png" alt="Greening Plato logo">
+        </a>
+        <ul>
+            <li><a href="../index.html"><img src="../Icons/Home.svg" alt="Home"> Home</a></li>
+            <li><a href="About.html"><img src="../Icons/AboutUs.svg" alt="About Us"> About Us</a></li>
+            <li><a href="Project.html"><img src="../Icons/Proyekto.svg" alt="Proyekto"> Proyekto</a></li>
+            <li><a href="Accomplishment.html"><img src="../Icons/Accomplishment.svg" alt="Accomplishments"> Accomplishments</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Logo Section -->
+        <section class="logo-section">
+            <img src="../1.png" alt="Greening Plato logo" class="page-logo">
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <h1 class="animate-in">Our Team</h1>
+            <div class="team-grid">
+                <div class="team-member animate-in">
+                    <div class="member-image-wrapper">
+                        <img src="../Group Image/Jojie.jpg" alt="Team member" class="member-image" data-name="Jojie R. Batiancila" data-position="Project Lead" onclick="openFullscreen(this)">
+                    </div>
+                    <h3 class="member-name">Jojie R. Batiancila</h3>
+                    <p class="member-position">Project Lead</p>
+                </div>
+
+                <div class="team-member animate-in">
+                    <div class="member-image-wrapper">
+                        <img src="../Group Image/Jerick.jpg" alt="Team member" class="member-image" data-name="Jerick Estimar" data-position="Co-Leader" onclick="openFullscreen(this)">
+                    </div>
+                    <h3 class="member-name">Jerick Estimar</h3>
+                    <p class="member-position">Co-Leader</p>
+                </div>
+
+                <div class="team-member animate-in">
+                    <div class="member-image-wrapper">
+                        <img src="../Group Image/Allia.jpg" alt="Team member" class="member-image" data-name="Allia Leonida" data-position="Insert Here" onclick="openFullscreen(this)">
+                    </div>
+                    <h3 class="member-name">Allia Leonida</h3>
+                    <p class="member-position">Secretary</p>
+                </div>
+
+                <div class="team-member animate-in">
+                    <div class="member-image-wrapper">
+                        <img src="../Group Image/Mabel.jpg" alt="Team member" class="member-image" data-name="Mabel Jane Pineda" data-position="Insert Here" onclick="openFullscreen(this)">
+                    </div>
+                    <h3 class="member-name">Mabel Jane Pineda</h3>
+                    <p class="member-position">Member</p>
+                </div>
+
+                <div class="team-member animate-in">
+                    <div class="member-image-wrapper">
+                        <img src="../Group Image/Ruthy.jpg" alt="Team member" class="member-image" data-name="Ruthymea Ogarte" data-position="Sustainability Officer" onclick="openFullscreen(this)">
+                    </div>
+                    <h3 class="member-name">Ruthymea Ogarte</h3>
+                    <p class="member-position">Member</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Description Section -->
+        <section class="project-description-section">
+            <h2 class="animate-in">About The Greening Plato Project</h2>
+            
+            <h3 class="project-subheading animate-in">Background and Interests</h3>
+            <p class="animate-in">
+                As students, we were directly affected by the conditions of shared campus spaces like the cafeteria. Our interest lay in improving everyday systems that influence health, behavior, and cooperation. We were particularly interested in projects that combine social responsibility with practical and sustainable solutions.
+            </p>
+            
+            <h3 class="project-subheading animate-in">Rationale Behind the Chosen Proyekto</h3>
+            <p class="animate-in">
+                We chose this project after observing recurring issues in the cafeteria, such as improper plate return, food residue mixing with utensils, and overcrowded containers. Instead of proposing an entirely new system, we focused on improving the existing container by dividing it into clear compartments. This approach was realistic, cost-effective, and easier to sustain.
+            </p>
+            
+            <h3 class="project-subheading animate-in">Relation to Civic Responsibility, Social Behavior, and Community Involvement</h3>
+            <p class="animate-in">
+                The project reflected civic responsibility by encouraging students to take part in maintaining cleanliness and order in a shared space. From a political sociology perspective, it showed how institutional rules and structures influence behavior. From an anthropological perspective, it highlighted how daily practices can become shared cultural habits through simple system changes and community participation.
+            </p>
+        </section>
+    </main>
+
+    <!-- Fullscreen Modal -->
+    <div id="fullscreenModal" class="fullscreen-modal" onclick="closeFullscreen()">
+        <span class="close-btn" onclick="event.stopPropagation(); closeFullscreen();">&times;</span>
+        <div class="modal-content">
+            <img id="fullscreenImage" src="" alt="Fullscreen view">
+            <div class="modal-info">
+                <h3 id="modalName"></h3>
+                <p id="modalPosition"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
